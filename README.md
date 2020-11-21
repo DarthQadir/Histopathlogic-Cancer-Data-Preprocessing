@@ -23,7 +23,10 @@ Kaggle provides a wonderful API one can use to directly download their dataset. 
 
 *Command line code for downloading the dataset*
 <br><br>
-`! kaggle competitions download -c histopathologic-cancer-detection`
+
+```
+! kaggle competitions download -c histopathologic-cancer-detection
+```
 
 <br>
 
@@ -33,8 +36,10 @@ Image augmentation is important so our machine learning models are able to gener
 
 *Function used for image augmentation*
 <br><br>
-`readCroppedImage(path, augmentations = True,ORIGINAL_SIZE=96, CROP_SIZE=90, RANDOM_ROTATION=3, RANDOM_SHIFT = 2,RANDOM_BRIGHTNESS = 7, RANDOM_CONTRAST = 5,
- RANDOM_90_DEG_TURN=1):`
+```
+readCroppedImage(path, augmentations = True,ORIGINAL_SIZE=96, CROP_SIZE=90, RANDOM_ROTATION=3, RANDOM_SHIFT = 2,RANDOM_BRIGHTNESS = 7, RANDOM_CONTRAST = 5,
+RANDOM_90_DEG_TURN=1):
+```
                     
 <h3 align='center'>How to balance target distributions</h3>
 
@@ -42,7 +47,9 @@ In our training dataset, we need to make sure that the distribution of our class
 
 *Code for a 60% training, 20% testing, and 20% validation data split*
 <br><br>
-`df_train, df_val, df_test = np.split(df_data.sample(frac=1), [int(.6*len(df_data)), int(.8*len(df_data))])`
+```
+df_train, df_val, df_test = np.split(df_data.sample(frac=1), [int(.6*len(df_data)), int(.8*len(df_data))])
+```
 
 
 <h3 align='center'>How to structure the data for Keras Model Training</h3>
@@ -52,6 +59,7 @@ In case datasets are too big to fit in our memory, we use generators. Generators
 *The directory structure that a keras generator needs for the cancer detection dataset*
 <br><br>
 
+```
 - Training data folder
   - a_no_tumor_tissue folder
   
@@ -64,3 +72,5 @@ In case datasets are too big to fit in our memory, we use generators. Generators
 - Validation data folder
   - a_no_tumor_tissue folder
   - b_has_tumor_tissue folder
+ 
+  ```
