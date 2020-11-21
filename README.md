@@ -56,9 +56,9 @@ df_train, df_val, df_test = np.split(df_data.sample(frac=1), [int(.6*len(df_data
 
 In case datasets are too big to fit in our memory, we use generators. Generators pass our data in batches instead of all at once; and they also require your data to be structured in a specific way to work. This section includes code on how to create such a directory structure.
 
-*The directory structure that a keras generator needs for the cancer detection dataset*
-<br><br>
 
+<br><br>
+*Below is the directory structure that a keras generator needs for the cancer detection dataset*
 ```
 - Training data folder
   - a_no_tumor_tissue folder
